@@ -6,6 +6,7 @@ import com.example.phantommask.enums.MaskSortEnum;
 import com.example.phantommask.param.*;
 import com.example.phantommask.repository.entity.Mask;
 import com.example.phantommask.repository.entity.Pharmacies;
+import com.example.phantommask.repository.entity.User;
 import org.springframework.data.domain.Sort;
 
 import java.time.LocalTime;
@@ -72,7 +73,6 @@ public interface PharmaciesService {
      * @param keyword 關鍵字
      * @return 搜尋結果
      */
-
     List<ResSearchResult> searchPharmaciesAndMasks(String keyword);
 
     /**
@@ -80,6 +80,13 @@ public interface PharmaciesService {
      *
      * @param reqPurchase 購買請求列表
      */
-
     void purchaseMask(ReqPurchase reqPurchase);
+
+    /**
+     * 取得購買紀錄
+     *
+     * @param userName 使用者名稱
+     * @return 購買紀錄
+     */
+    User getUser(String userName);
 }

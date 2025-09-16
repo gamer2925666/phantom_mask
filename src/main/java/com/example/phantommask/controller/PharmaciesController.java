@@ -4,6 +4,7 @@ import com.example.phantommask.enums.Comparison;
 import com.example.phantommask.enums.DayOfWeekEnum;
 import com.example.phantommask.enums.MaskSortEnum;
 import com.example.phantommask.param.*;
+import com.example.phantommask.repository.entity.PurchaseHistory;
 import com.example.phantommask.repository.entity.User;
 import com.example.phantommask.repository.repository.MaskRepository;
 import com.example.phantommask.repository.entity.Mask;
@@ -12,6 +13,7 @@ import com.example.phantommask.service.PharmaciesService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -169,5 +171,22 @@ public class PharmaciesController {
         log.info("purchaseMask reqPurchases={}", reqPurchases);
         pharmaciesService.purchaseMask(reqPurchases);
         return null;
+    }
+
+    @Operation(summary = "查詢User消費紀錄")
+    @GetMapping("/user/{userName}")
+    public ResponseEntity<ApiResponse<User>> getUser(
+            @PathVariable(name = "userName")
+            @RequestParam
+            @Parameter(name = "userName",description = "使用者名稱", example = "Holly Thompson")
+            String userName
+    ){
+        log.info("userName:{}",userName);
+        return ResponseEntity.ok(
+                ApiResponse.<User>builder()
+                        .data(pharmaciesService.getUser(userName))
+                        .code("200")
+                        .build()
+        );
     }
 }

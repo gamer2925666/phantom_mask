@@ -295,4 +295,15 @@ public class PharmaciesServiceImpl implements PharmaciesService {
         });
         pharmaciesRepository.saveAll(pharmaciesMap.values());
     }
+
+    /**
+     * 取得購買紀錄
+     *
+     * @param userName 使用者名稱
+     * @return 購買紀錄
+     */
+    @Override
+    public User getUser(String userName) {
+        return userRepository.findByName(userName).orElseThrow(() -> new RuntimeException("User not found"));
+    }
 }

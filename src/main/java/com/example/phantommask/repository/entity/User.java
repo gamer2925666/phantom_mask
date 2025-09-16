@@ -1,5 +1,6 @@
 package com.example.phantommask.repository.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,9 +20,11 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
+    @Schema(description = "使用者名稱")
     private String name;
 
     @Column(nullable = false)
+    @Schema(description = "剩餘金額")
     private Double cashBalance;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)

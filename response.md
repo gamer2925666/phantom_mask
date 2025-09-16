@@ -39,15 +39,17 @@ On the local machine, please follow the commands below to build it.
 $ ./gradlew bootBuildImage
 
 #push to docker hub
-$ docker tag phantom_mask:0.0.1-SNAPSHOT gamer2925666/phantom_mask:0.0.1-SNAPSHOT
-$ docker push gamer2925666/phantom_mask:0.0.1-SNAPSHOT 
+$ docker tag phantom_mask:0.0.2 gamer2925666/phantom_mask:0.0.2
+$ docker push gamer2925666/phantom_mask:0.0.2 
 
 #pull image
-$ docker pull gamer2925666/phantom_mask:0.0.1-SNAPSHOT
+$ docker pull gamer2925666/phantom_mask:0.0.2
 
 #Use `docker run` to start the container and map port 8080 to the host machine.
-$ docker run -d -p 8080:8080  gamer2925666/phantom_mask:0.0.1-SNAPSHOT
+$ docker run -d -p 8080:8080  gamer2925666/phantom_mask:0.0.2
 ```
+
+Docker hub url : [link](https://hub.docker.com/r/gamer2925666/phantom_mask)
 
 ### B.2. Demo Site Url
 
