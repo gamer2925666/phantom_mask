@@ -57,5 +57,5 @@ The demo site is ready on [my azure app service site](https://phantom-mask-exbfd
 
 ### C.1. ERD
 
-My ERD [erd-link](#erd-link).
+![ERD](./ERD.png)
 - --
