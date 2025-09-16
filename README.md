@@ -3,14 +3,14 @@ You are tasked with building a backend service and a database for a pharmacy pla
 
 ## A. Raw Data
 ### A.1. Pharmacy Data
-Link: [data/pharmacies.json](data/pharmacies.json)
+Link: [data/pharmacies.json](src/main/resources/data/pharmacies.json)
 
 This dataset contains a list of pharmacies with their names, opening hours, cash balances, and mask products. The cash balance represents the amount of money a pharmacy holds in its merchant account on this platform.
 
 > Be cautious when processing the `openingHours` field in `pharmacies.json`, as it contains various time formats.
 
 ### A.2. User Data
-Link: [data/users.json](data/users.json)
+Link: [data/users.json](src/main/resources/data/users.json)
 
 This dataset contains a list of users with their names, cash balances, and purchasing histories. The cash balance represents the amount of money a user holds in their wallet on this platform.
 
